@@ -750,3 +750,63 @@ summary::before, summary::after { background: var(--hoop); }
   .hero { padding-bottom: 120px; }
   .hero + .features { padding-top: 72px; }
 }
+/* Desktop headline size (Gene, 2026-11-22: "make h1 smaller on desktop"). Was up to 3.6rem. */
+@media (min-width: 1001px) { h1 { font-size: 2.85rem; } }
+
+/* Phone layout revision (Gene, 2026-11-22: "the mobile site needs a better layout").
+   One left edge for all text, tighter sections, and icon-beside-text rows instead of tall stacked blocks. */
+@media (max-width: 860px) {
+  section { padding: 44px 0; }
+  h2 { font-size: 1.5rem; }
+  section > .wrap > h2, .about h2, .faq h2 { text-align: left; }
+  #tools .wrap > p, .reviews .wrap > p { text-align: left; }
+  .slider-nav { justify-content: flex-start; }
+
+  /* hero */
+  .hero { padding: 30px 0 0; text-align: left; }
+  .hero .wrap { justify-items: stretch; }
+  .hero h1 { font-size: 2.05rem; margin-inline: 0; max-width: none; }
+  .hero p.lead { font-size: 1rem; margin: 0; }
+  .hero-badges { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 8px; margin: 20px 0 0; padding: 0; border: 0; border-radius: 0; background: none; font-size: 0.82rem; }
+  .hero-badges li { padding: 6px 12px 6px 9px; border: 1px solid rgba(143, 220, 203, 0.55); border-radius: 999px; background: rgba(143, 220, 203, 0.1); gap: 6px; }
+  .hero-badges li::before { width: 15px; height: 15px; }
+  .hero-actions { display: grid; grid-template-columns: 1.7fr 1fr; gap: 10px; margin: 22px 0 12px; }
+  .hero-actions .btn { text-align: center; padding-inline: 10px; }
+  .hero-actions .btn:first-child { grid-column: 1 / -1; }
+  .hero-note { font-size: 0.9rem; }
+  .hero-photo { margin-top: 24px; }
+  .hero-review { margin-top: 12px; padding: 14px 16px; }
+  .hero + .features { padding-top: 44px; }
+
+  /* who takes lessons: icon left, text right */
+  .features-grid { gap: 26px; margin-top: 28px; }
+  .feature { display: grid; grid-template-columns: 58px 1fr; column-gap: 16px; align-items: start; }
+  .feature .tile { grid-row: 1 / span 3; width: 58px; height: 58px; margin: 2px 0 0; border-width: 2px; border-radius: 12px; box-shadow: -3px -3px 22px 0 var(--g1), 3px 6px 36px 0 var(--g2); }
+  .feature .tile svg { width: 30px; height: 30px; }
+  .feature h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3em; }
+  .feature p { line-height: 1.6; }
+  .facts { margin-top: 30px; }
+
+  /* how lessons work: number left, text right */
+  .steps { gap: 24px; margin-top: 26px; }
+  .steps li { display: grid; grid-template-columns: 58px 1fr; column-gap: 16px; align-items: start; }
+  .steps li::before, .steps li:nth-child(2)::before, .steps li:nth-child(3)::before { grid-row: 1 / span 3; width: 58px; height: 58px; margin: 2px 0 0; border-width: 2px; border-radius: 12px; font-size: 1.5rem; box-shadow: -3px -3px 22px 0 var(--g1), 3px 6px 36px 0 var(--g2); }
+  .steps li > * { grid-column: 2; }
+  .steps h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.3em; }
+  .steps p { margin: 0; }
+
+  /* lessons cards and tools */
+  .ways { gap: 16px; margin-top: 26px; }
+  .way { padding: 18px; }
+  .way img { margin-bottom: 16px; }
+  .tool-cards, .tool-cards.three { gap: 12px; margin-top: 22px; }
+  .tool-card { display: grid; grid-template-columns: 56px 1fr; column-gap: 16px; align-items: start; padding: 18px; }
+  .tool-card .tool-icon { grid-column: 1; grid-row: 1 / span 3; width: 56px; height: 56px; margin: 2px 0 0; }
+  .tool-card h3 { grid-column: 2; grid-row: 1; font-size: 1.15rem; margin-bottom: 0.25em; }
+  .tool-card p { grid-column: 2; grid-row: 2; margin-bottom: 8px; font-size: 0.95rem; }
+  .tool-card span { grid-column: 2; grid-row: 3; }
+
+  .review-slider { margin-top: 24px; }
+  .photo-strip + section { padding-top: 40px; }
+  blockquote { font-size: 1rem; margin: 20px 0; }
+}
