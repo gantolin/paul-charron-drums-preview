@@ -732,3 +732,21 @@ summary::before, summary::after { background: var(--hoop); }
 .miles-board strong { color: #fff; font-size: 1.05rem; }
 .miles-board em { font-style: normal; font-weight: 700; color: var(--teal); font-variant-numeric: tabular-nums; }
 .miles-board a:hover strong { color: var(--teal); }
+
+/* Desktop hero: text on the left, photo on the right (Gene, 2026-11-22: "try that"). Phones and tablets keep the stacked hero. */
+@media (min-width: 1001px) {
+  .hero { padding: 64px 0 84px; text-align: left; }
+  .hero .wrap { grid-template-columns: 1.02fr 0.98fr; gap: 52px; align-items: center; justify-items: start; }
+  .hero h1 { margin-inline: 0; }
+  .hero p.lead { margin: 0; }
+  .hero-badges { margin: 26px 0 0; justify-content: flex-start; padding: 12px 22px; border-radius: 18px; }
+  .hero-actions { justify-content: flex-start; }
+  .hero-photo { margin: 0; width: 100%; }
+  .hero-photo img { aspect-ratio: 1400 / 1157; }
+  .hero-review { right: -14px; bottom: -92px; max-width: 290px; font-size: 0.86rem; padding: 14px 16px; }
+  .hero-badges { gap: 6px 16px; padding: 12px 16px; font-size: 0.86rem; }
+  .hero-actions { gap: 10px; }
+  .hero-actions .btn { padding-inline: 18px; font-size: 0.95rem; }
+  .hero { padding-bottom: 120px; }
+  .hero + .features { padding-top: 72px; }
+}
