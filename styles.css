@@ -920,3 +920,13 @@ summary::before, summary::after { background: var(--hoop); }
 
 /* Phone hero: no Book, Call and Text buttons here; the bar fixed to the bottom of the screen already has all three (Gene, 2026-11-22). */
 @media (max-width: 860px) { .hero-actions { display: none; } .hero-note { margin-top: 16px; } }
+
+/* Phone hero order (Gene, 2026-11-22): headline, intro, the four cards, the review, the Google line, then the photo.
+   The two hero blocks are flattened into one grid so the review (which sits after the photo in the HTML) can move up. */
+@media (max-width: 860px) {
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8px; justify-items: stretch; }
+  .hero .wrap > div:first-child, .hero-photo { display: contents; }
+  .hero-review { grid-column: 1 / -1; order: 1; margin-top: 12px; }
+  .hero-note { order: 2; margin-top: 14px; }
+  .hero-photo img { grid-column: 1 / -1; order: 3; margin-top: 20px; }
+}
