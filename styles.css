@@ -917,3 +917,6 @@ summary::before, summary::after { background: var(--hoop); }
 }
 /* Tablets (861 to 1000px): keep the Step Up badge on its own centered line under the badges box. */
 @media (min-width: 861px) and (max-width: 1000px) { .hero-su { display: flex; width: fit-content; margin: 12px auto 0; } }
+
+/* Phone hero: no Book, Call and Text buttons here; the bar fixed to the bottom of the screen already has all three (Gene, 2026-11-22). */
+@media (max-width: 860px) { .hero-actions { display: none; } .hero-note { margin-top: 16px; } }
