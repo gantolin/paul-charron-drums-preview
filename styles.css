@@ -853,3 +853,27 @@ summary::before, summary::after { background: var(--hoop); }
 .su-way { background: var(--card); border-radius: 12px; padding: 22px; }
 .su-way h3 { margin-top: 0; }
 @media (max-width: 860px) { .su-ways { grid-template-columns: 1fr; } .su-bar { font-size: 0.88rem; padding: 8px 12px; } }
+
+/* Step Up For Students in the menu and as a hero badge (Gene, 2026-11-22). Our own drawn icon, not Step Up's logo. */
+.su-nav { display: inline-flex; align-items: center; gap: 7px; }
+.su-nav svg, .hero-su svg { width: 20px; height: 20px; fill: none; stroke: var(--brass, #e9bb4f); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.su-nav svg .star, .hero-su svg .star { fill: var(--hoop, #e67a2e); stroke: none; }
+.hero-su { display: inline-flex; align-items: center; gap: 8px; margin: 10px 0 0; padding: 9px 16px; border: 1px solid rgba(233, 187, 79, 0.6); border-radius: 18px; background: rgba(233, 187, 79, 0.1); color: #fff; font-weight: 600; font-size: 0.86rem; text-decoration: none; }
+.hero-su:hover { border-color: var(--brass, #e9bb4f); color: var(--brass, #e9bb4f); }
+@media (max-width: 1000px) { .hero-su { margin-top: 12px; } }
+@media (max-width: 860px) { .hero-su { margin-top: 8px; padding: 6px 12px 6px 9px; border-radius: 999px; font-size: 0.82rem; justify-self: start; } .hero-su svg { width: 16px; height: 16px; } }
+
+/* Step Up For Students' own mark on a white chip (their mark is drawn for a white background). */
+.su-nav img, .hero-su img { width: 24px; height: 24px; padding: 3px; background: #fff; border-radius: 50%; flex: none; }
+/* Narrow desktops (1141 to 1259px): tighten the menu so the extra item fits on one row. */
+@media (min-width: 1141px) {
+  .nav { gap: 18px; }
+  .nav a { font-size: 1.02rem; }
+  .nav a.btn.small { padding: 10px 14px; font-size: 0.96rem; }
+}
+@media (min-width: 1141px) and (max-width: 1199px) {
+  .nav { gap: 14px; }
+  .nav a { font-size: 0.98rem; }
+  .nav a.btn.small { padding: 10px 12px; font-size: 0.93rem; }
+  .brand { font-size: 0.95rem; }
+}
