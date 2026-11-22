@@ -810,3 +810,31 @@ summary::before, summary::after { background: var(--hoop); }
   .photo-strip + section { padding-top: 40px; }
   blockquote { font-size: 1rem; margin: 20px 0; }
 }
+/* Plain "Who takes drum lessons" and 1-2-3 steps (Gene, 2026-11-22: the light-up cards "seem over done").
+   No glow, no outlined boxes: a flat icon or number, a bold label, text, thin dividers between columns. */
+.features-grid { gap: 0; margin-top: 44px; }
+.feature { padding: 4px 34px; }
+.feature + .feature { border-left: 1px solid var(--line); }
+.feature .tile { display: block; width: auto; height: auto; border: 0; border-radius: 0; background: none; box-shadow: none; margin: 0 0 14px; }
+.feature .tile { place-items: start; justify-items: start; text-align: left; }
+.feature .tile svg { display: block; width: 38px; height: 38px; margin: 0; }
+.feature h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.4em; }
+.feature p { line-height: 1.6; }
+.steps { gap: 0; }
+.steps li { padding: 4px 34px; }
+.steps li + li { border-left: 1px solid var(--line); }
+.steps li::before, .steps li:nth-child(2)::before, .steps li:nth-child(3)::before { display: block; width: auto; height: auto; border: 0; border-radius: 0; background: none; box-shadow: none; margin: 0 0 12px; font-size: 2rem; line-height: 1; color: var(--c); }
+.steps h3 { font-size: 1.2rem; font-weight: 700; }
+@media (max-width: 860px) {
+  .features-grid { gap: 0; margin-top: 22px; }
+  .feature { grid-template-columns: 40px 1fr; column-gap: 14px; padding: 18px 0; }
+  .feature:first-child { padding-top: 0; }
+  .feature + .feature { border-left: 0; border-top: 1px solid var(--line); }
+  .feature .tile { grid-row: 1 / span 3; width: auto; height: auto; margin: 2px 0 0; border: 0; box-shadow: none; }
+  .feature .tile svg { width: 32px; height: 32px; }
+  .steps { gap: 0; margin-top: 20px; }
+  .steps li { grid-template-columns: 40px 1fr; column-gap: 14px; padding: 18px 0; }
+  .steps li:first-child { padding-top: 0; }
+  .steps li + li { border-left: 0; border-top: 1px solid var(--line); }
+  .steps li::before, .steps li:nth-child(2)::before, .steps li:nth-child(3)::before { grid-row: 1 / span 3; width: auto; height: auto; margin: 0; border: 0; box-shadow: none; font-size: 1.8rem; line-height: 1.1; }
+}
